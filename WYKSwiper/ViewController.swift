@@ -24,6 +24,7 @@ class ViewController: UIViewController, WYKSwiperDelegate {
         let height = self.view.frame.size.height
         let width = self.view.frame.size.width
         let swiper = WYKSwiper(frame: CGRect(x: 0, y: height / 3, width: width, height: height / 3))
+        swiper.setDefaultImage(defaultImage: UIImage(named: "default_image"))
         swiper.swiperDelegate = self
         self.view.addSubview(swiper)
         var data = [String]()

@@ -33,6 +33,7 @@ class WYKSwiper: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     var pageControlHeight: CGFloat = 30
     var pageControlAlignment = NSTextAlignment.center
     var currentPage = 0
+    var defaultImage: UIImage?
     
 //MARK: - Initialize
     override init(frame: CGRect) {
@@ -167,8 +168,8 @@ class WYKSwiper: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
             } else if dataItem is UIImage {
                 image = dataItem as? UIImage
             }
-            if image == nil {
-                image = UIImage(named: "default_image")
+            if image == nil && defaultImage != nil {
+                image = defaultImage
             }
             if(links.count > i) {
                 let linkItem = links[i]
@@ -244,6 +245,10 @@ class WYKSwiper: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     func setFrame(frame: CGRect) {
         self.frame = frame
         refreshCurrentUI()
+    }
+    
+    func setDefaultImage(defaultImage: UIImage?) {
+        self.defaultImage = defaultImage
     }
     
     func setPageControlStyle(posistion: NSTextAlignment, height: CGFloat, unitWidth: CGFloat) {
