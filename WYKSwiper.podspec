@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = 'WYKSwiper'
     s.version      = '1.0.0'
-    s.summary      = 'A Swiper'
+    s.summary      = 'A Swiper written in swift 3.0'
     s.homepage     = 'https://github.com/sunbirdwyk/WYKSwiper'
     s.license      = 'MIT'
     s.authors      = {'Sunbird' => 'sunbirdwyk@163.com'}
